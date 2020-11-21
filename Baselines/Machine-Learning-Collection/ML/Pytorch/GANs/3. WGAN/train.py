@@ -10,8 +10,9 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
+sys.path.append('./DNA_project/Baselines/Machine-Learning-Collection/ML/Pytorch/GANs/3. WGAN/')
 from model import Discriminator, Generator, initialize_weights
-
+#%%
 # Hyperparameters etc
 device = "cuda" if torch.cuda.is_available() else "cpu"
 LEARNING_RATE = 5e-5
@@ -58,7 +59,8 @@ step = 0
 
 gen.train()
 critic.train()
-
+print ('about')
+#%%
 for epoch in range(NUM_EPOCHS):
     # Target labels not needed! <3 unsupervised
     for batch_idx, (data, _) in enumerate(loader):

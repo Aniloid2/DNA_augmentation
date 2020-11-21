@@ -10,9 +10,11 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
+import sys
+sys.path.append('./DNA_project/Baselines/Machine-Learning-Collection/ML/Pytorch/GANs/4. WGAN-GP/')
 from utils import gradient_penalty, save_checkpoint, load_checkpoint
 from model import Discriminator, Generator, initialize_weights
-
+#%%
 # Hyperparameters etc.
 device = "cuda" if torch.cuda.is_available() else "cpu"
 LEARNING_RATE = 1e-4
@@ -43,6 +45,7 @@ loader = DataLoader(
     batch_size=BATCH_SIZE,
     shuffle=True,
 )
+
 
 # initialize gen and disc, note: discriminator should be called critic,
 # according to WGAN paper (since it no longer outputs between [0, 1])
