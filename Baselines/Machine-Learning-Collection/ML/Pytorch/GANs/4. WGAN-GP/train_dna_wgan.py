@@ -18,7 +18,7 @@ sys.path.append('./DNA_project/Baselines/Machine-Learning-Collection/ML/Pytorch/
 from utils import gradient_penalty, save_checkpoint, load_checkpoint
 
 from model_dna import Discriminator_1D, Generator_1D, initialize_weights
-from utils import ToTensor, DnaHotEncoding, StrandDataset
+from utils_dna import ToTensor, DnaHotEncoding, StrandDataset
 import numpy as np
 
 # Hyperparameters etc.
@@ -133,7 +133,7 @@ for epoch in range(NUM_EPOCHS):
                     end.append(ssim(np.squeeze(np.moveaxis(real['noisy'][i].detach().cpu().numpy(), 0, 1)),np.squeeze(np.moveaxis(fake[i].detach().cpu().numpy(), 0, 1)),multichannel=True))
                 sim_batch = sum(end)/len(end)
                 print ('sim metric',sim_batch)
-                
+
                 # writer_real.add_image("Real", img_grid_real, global_step=step)
                 # writer_fake.add_image("Fake", img_grid_fake, global_step=step)
 
