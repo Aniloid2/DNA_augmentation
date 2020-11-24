@@ -154,10 +154,10 @@ o = open('./DNA_project/Data/BLAST/NoisyStrands.txt','r')
 map_ref = ram_dictionary(create=False)
 map_noisy = ram_dictionary_noisy(create=False)
 #%%
-# f = open('./DNA_project/Data/result/dev_dataset.txt','r')
-f = open('./DNA_project/Data/result/id20.small.result.txt','r')
+f = open('./DNA_project/Data/result/dev_dataset.txt','r')
+# f = open('./DNA_project/Data/result/id20.small.result.txt','r')
 #%%
-save_directory = './DNA_project/Data/result/clean_noisy_dataset.txt'
+save_directory = './DNA_project/Data/result/clean_noisy_dataset_dev.txt'
 save =  open(save_directory,'w')
 strand_processing_counter =0
 save.write('qseqid,sseqid,equality,qstart,qend,sstart,send,ref_strand,noisy_strand \n',)
